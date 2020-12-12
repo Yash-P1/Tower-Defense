@@ -58,11 +58,9 @@ public class Enemy : MonoBehaviour
                 // wavpointIndex++;
                 target = WayPoints.points[wavpointIndex];
                 wavpointIndex++;
-                Debug.Log(target);
             }else{
                 target = WayPoints.points[wavpointIndex];
-                wavpointIndex++;
-                Debug.Log(target); 
+                wavpointIndex++; 
             }
              
 
