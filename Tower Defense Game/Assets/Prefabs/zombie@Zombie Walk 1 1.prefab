@@ -2898,6 +2898,7 @@ GameObject:
   - component: {fileID: 8630140357129505993}
   - component: {fileID: 3685938497604631333}
   - component: {fileID: 5937374011295618944}
+  - component: {fileID: -7558066019448254069}
   m_Layer: 0
   m_Name: zombie@Zombie Walk 1 1
   m_TagString: Enemy
@@ -2954,6 +2955,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &-7558066019448254069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975597378069845619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9010773367143073587
 GameObject:
   m_ObjectHideFlags: 0
