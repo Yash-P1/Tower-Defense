@@ -5,6 +5,7 @@ using UnityEngine;
 public class shop : MonoBehaviour
 {
     public TurretBlueprint standardTurret;
+    public TurretBlueprint missileTurret;
 
     BuildManager buildManager;
     // Start is called before the first frame update
@@ -13,15 +14,15 @@ public class shop : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void PurchasedStandardTurret()
+    public void SelectStandardTurret()
     {
         Debug.Log("Turret 1");
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+        buildManager.SelectTurretToBuild(standardTurret);
     }
 
-    public void PurchasedMissileLauncher()
+    public void SelectMissileLauncher()
     {
         Debug.Log("Turret 2");
-        buildManager.SetTurretToBuild(buildManager.missileLauncherPrefab);
+        buildManager.SelectTurretToBuild(missileTurret);
     }
 }

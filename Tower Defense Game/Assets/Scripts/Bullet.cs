@@ -40,10 +40,9 @@ public class Bullet : MonoBehaviour
     {
         GameObject effectsIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectsIns, 2f);
-        Debug.Log("out");
+        
         if(explosionRadius > 0)
         {
-            Debug.Log("In");
             Explode();
         }else{
             Damage(target);
@@ -68,7 +67,6 @@ public class Bullet : MonoBehaviour
 
     void Damage(Transform enemy)
     {
-        Debug.Log("Damage");
         Destroy(enemy.gameObject);
     }
 
