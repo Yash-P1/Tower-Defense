@@ -16,6 +16,7 @@ public class BuildManager : MonoBehaviour
 	}
 
 	public GameObject standardTurretPrefab;
+	public GameObject missileLauncherPrefab;
 
 	// void Start()
 	// {
@@ -29,8 +30,12 @@ public class BuildManager : MonoBehaviour
 		return turretToBuild;
 	}
 
-	public void SetTurretToBuild (GameObject turret)
+	public void SetTurretToBuild(GameObject turret)
 	{
 		turretToBuild = turret;
 	}
+	// public void SelectTurretToBuild (TurretBlueprint turret)
+	// {
+	// 	turretToBuild = turret;
+	// }
 }
