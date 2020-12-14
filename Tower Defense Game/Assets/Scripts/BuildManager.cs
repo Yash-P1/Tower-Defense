@@ -18,6 +18,7 @@ public class BuildManager : MonoBehaviour
 	public GameObject standardTurretPrefab;
 	public GameObject missileLauncherPrefab;
 
+	public GameObject buildEffect;
 	// void Start()
 	// {
 	// 	turretToBuild = standardTurretPrefab;
@@ -31,6 +32,7 @@ public class BuildManager : MonoBehaviour
 
 	
 	public void BuildTurretOn(Node node){
+
 		if(PlayerStats.Money < turretToBuild.cost)
 		{
 			Debug.Log("Not enough plasma.");
@@ -39,8 +41,13 @@ public class BuildManager : MonoBehaviour
 
 		PlayerStats.Money -= turretToBuild.cost;
 
-		GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+		Vector3 TurretSpwanOffset = new Vector3(0f, 50f, 0f);
+
+		GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity); ////// + TurretSpwanOffset, Quaternion.identity);
 		node.turret = turret;
+
+		GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
+		Destroy(effect, 5f);
 
 		Debug.Log("Turret Build! Money Left: " + PlayerStats.Money);
 	}
