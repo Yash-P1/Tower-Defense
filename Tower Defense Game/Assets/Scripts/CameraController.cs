@@ -15,6 +15,11 @@ class CameraController : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.GameIsOver)
+        {
+            this.enabled = false;
+            return;
+        }
 
         //Update Plane
         if (Input.touchCount >= 1)
