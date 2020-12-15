@@ -1,97 +1,46 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
-{
-    public float speed = 10f;
+public class Enemy : MonoBehaviour {
 
-    public int health = 100;
-    public int value = 50;
+	public float startSpeed = 10f;
 
-    public GameObject deathEffect;
+	[HideInInspector]
+	public float speed;
 
-    private Transform target;
-    private int wavpointIndex = 0;
-    public int random;
-    private int destroyPoint = 25;
+	public float health = 100;
 
-    void Start()
-    {
-        target = WayPoints.points[0];  
-        random = Random.Range(0,3);
-    }
+	public int worth = 50;
 
-    public void TakeDamage(int amount){
-        health -= amount;
+	public GameObject deathEffect;
 
-        if(health <=0)
-        {
-            Die();
-        }
-    }
+	void Start ()
+	{
+		speed = startSpeed;
+	}
 
-    void Die()
-    {
-        PlayerStats.Money += value;
+	public void TakeDamage (float amount)
+	{
+		health -= amount;
 
-        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 5f);
+		if (health <= 0)
+		{
+			Die();
+		}
+	}
 
-        Destroy(gameObject);
-    }
+	public void Slow (float pct)
+	{
+		speed = startSpeed * (1f - pct);
+	}
 
-    void Update()
-    {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        transform.LookAt(target);
-       
-        if(Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWayPoint();
-        }
+	void Die ()
+	{
+		PlayerStats.Money += worth;
 
-        void GetNextWayPoint()
-        {
+		GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+		Destroy(effect, 5f);
 
-            if(wavpointIndex > destroyPoint)//WayPoints.points.Length - 1)
-            {
-                EndPath();
-                return;
-            }
-            if(wavpointIndex == 0)
-            {
-                if(random == 0)
-                {
-                    wavpointIndex = 1;
-                    destroyPoint = 13;
-                    // wavpointIndex++;
-                    // target = WayPoints.points[wavpointIndex];
-                    // Debug.Log(target);
-                    return;
-                }else if(random == 1){
-                    wavpointIndex = 14;
-                    destroyPoint = 19;
-                    // target = WayPoints.points[wavpointIndex];
-                    // Debug.Log(target);
-                    return;
-                }else if(random == 2){
-                    wavpointIndex = 20;
-                    destroyPoint = 25;
-                    return;
-                }
-                // wavpointIndex++;
-                target = WayPoints.points[wavpointIndex];
-                wavpointIndex++;
-            }else{
-                target = WayPoints.points[wavpointIndex];
-                wavpointIndex++; 
-            }
-        }
+		Destroy(gameObject);
+	}
 
-        void EndPath(){
-            PlayerStats.Lives--;
-            Destroy(gameObject);
-        }
-
-    }
 }
