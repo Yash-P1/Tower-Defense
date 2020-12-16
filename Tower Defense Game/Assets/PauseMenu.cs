@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject ui;
-    
+
+    public string menuSceneName = "MainMenu";
+
+    public SceneFader sceneFader;
+
     // Update is called once per frame
     public void PauseGame()
     {
@@ -22,10 +26,11 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Menu(){
-       Debug.Log("Menu");
+        PauseGame();
+        sceneFader.FadeTo(menuSceneName);
     }
     public void Retry(){
         PauseGame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 }
