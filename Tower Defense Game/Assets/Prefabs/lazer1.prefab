@@ -239,6 +239,8 @@ GameObject:
   - component: {fileID: 5022801043029023595}
   - component: {fileID: 8290958593265607233}
   - component: {fileID: 7758109126207925486}
+  - component: {fileID: -5731563055000489287}
+  - component: {fileID: 3120038204051623662}
   m_Layer: 0
   m_Name: lazer1
   m_TagString: Untagged
@@ -298,6 +300,8 @@ MonoBehaviour:
     type: 3}
   fireRate: 1
   useLaser: 1
+  damageOverTime: 30
+  slowAmount: 0.5
   lineRenderer: {fileID: 7758109126207925486}
   impactEffect: {fileID: 760809165335333765}
   impactLight: {fileID: 0}
@@ -403,6 +407,35 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!54 &-5731563055000489287
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022801043036416175}
+  serializedVersion: 2
+  m_Mass: 22
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!65 &3120038204051623662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022801043036416175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1, z: 4}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1001 &8939406793896647165
 PrefabInstance:
   m_ObjectHideFlags: 0

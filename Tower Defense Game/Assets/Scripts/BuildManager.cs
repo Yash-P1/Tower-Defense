@@ -38,9 +38,9 @@ public class BuildManager : MonoBehaviour
 
 		PlayerStats.Money -= turretToBuild.cost;
 
-		Vector3 TurretSpwanOffset = new Vector3(0f, 50f, 0f);
+		Vector3 TurretSpwanOffset = new Vector3(0f, 5f, 0f);
 
-		GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity); ////// + TurretSpwanOffset, Quaternion.identity);
+		GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, node.GetBuildPosition()+ TurretSpwanOffset, Quaternion.identity);
 		node.turret = turret;
 
 		GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
