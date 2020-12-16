@@ -1,72 +1,54 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
-{
-    public float speed = 10f;
+public class Enemy : MonoBehaviour {
 
-    private Transform target;
-    private int wavpointIndex = 0;
-    public int random;
-    private int destroyPoint = 25;
+	public float startSpeed = 10f;
 
-    void Start()
-    {
-        target = WayPoints.points[0];  
-        random = Random.Range(0,3);
-    }
+	[HideInInspector]
+	public float speed;
 
-    void Update()
-    {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        transform.LookAt(target);
-       
-        if(Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWayPoint();
-        }
+	public float startHealth = 100;
+	private float health;
 
-        void GetNextWayPoint()
-        {
+	public int worth = 50;
 
-            if(wavpointIndex > destroyPoint)//WayPoints.points.Length - 1)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            if(wavpointIndex == 0)
-            {
-                if(random == 0)
-                {
-                    wavpointIndex = 1;
-                    destroyPoint = 13;
-                    // wavpointIndex++;
-                    // target = WayPoints.points[wavpointIndex];
-                    // Debug.Log(target);
-                    return;
-                }else if(random == 1){
-                    wavpointIndex = 14;
-                    destroyPoint = 19;
-                    // target = WayPoints.points[wavpointIndex];
-                    // Debug.Log(target);
-                    return;
-                }else if(random == 2){
-                    wavpointIndex = 20;
-                    destroyPoint = 25;
-                    return;
-                }
-                // wavpointIndex++;
-                target = WayPoints.points[wavpointIndex];
-                wavpointIndex++;
-                Debug.Log(target);
-            }else{
-                target = WayPoints.points[wavpointIndex];
-                wavpointIndex++;
-                Debug.Log(target); 
-            }
-             
+	public GameObject deathEffect;
 
-        }
+	[Header("Unity Stuff")]
+	public Image healthBar;
 
-    }
+	void Start ()
+	{
+		speed = startSpeed;
+		health = startHealth;
+	}
+
+	public void TakeDamage (float amount)
+	{
+		health -= amount;
+
+		healthBar.fillAmount = health / startHealth;
+
+		if (health <= 0)
+		{
+			Die();
+		}
+	}
+
+	public void Slow (float pct)
+	{
+		speed = startSpeed * (1f - pct);
+	}
+
+	void Die ()
+	{
+		PlayerStats.Money += worth;
+
+		GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+		Destroy(effect, 5f);
+
+		Destroy(gameObject);
+	}
+
 }
