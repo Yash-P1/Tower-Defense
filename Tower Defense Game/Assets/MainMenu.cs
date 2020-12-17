@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
         sceneFader.FadeTo(levelToLoad);
     }
 
+    public void Option()
+    {
+        sceneFader.FadeTo("Hints");
+    }
+
     public void Quit()
     {
         Debug.Log("Quit");
