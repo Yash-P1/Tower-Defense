@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 2106927188751555125, guid: 96230839210cf204ba0e2eca3fe04365,
         type: 3}
       propertyPath: m_Name
-      value: LevelButton (1)
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 2106927188751555126, guid: 96230839210cf204ba0e2eca3fe04365,
         type: 3}
@@ -499,6 +499,7 @@ MonoBehaviour:
   levelButtons:
   - {fileID: 2106927187127195649}
   - {fileID: 180332296}
+  - {fileID: 1475377395}
 --- !u!4 &503550978
 Transform:
   m_ObjectHideFlags: 0
@@ -676,7 +677,7 @@ PrefabInstance:
     - target: {fileID: 2106927188751555125, guid: 96230839210cf204ba0e2eca3fe04365,
         type: 3}
       propertyPath: m_Name
-      value: LevelButton (2)
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 2106927188751555126, guid: 96230839210cf204ba0e2eca3fe04365,
         type: 3}
@@ -831,6 +832,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1475377393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1475377395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2106927188751555127, guid: 96230839210cf204ba0e2eca3fe04365,
+    type: 3}
+  m_PrefabInstance: {fileID: 1475377393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1568850085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1314,7 +1327,7 @@ PrefabInstance:
     - target: {fileID: 2106927188751555125, guid: 96230839210cf204ba0e2eca3fe04365,
         type: 3}
       propertyPath: m_Name
-      value: LevelButton
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 2106927188751555126, guid: 96230839210cf204ba0e2eca3fe04365,
         type: 3}
