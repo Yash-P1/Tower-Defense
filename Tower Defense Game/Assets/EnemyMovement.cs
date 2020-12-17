@@ -33,6 +33,7 @@ public class EnemyMovement : MonoBehaviour {
 		enemy.speed = enemy.startSpeed;
 	}
 
+    private bool odd = true;
 	void GetNextWaypoint()
 	{
 		// if (wavepointIndex >= Waypoints.points.Length - 1)
@@ -40,6 +41,14 @@ public class EnemyMovement : MonoBehaviour {
 		// 	EndPath();
 		// 	return;
 		// }
+        
+        random = Random.Range(0,3);
+
+        if(random%2 == 0)
+        {
+            odd = !odd;
+            }
+
         if(wavepointIndex > destroyPoint)//WayPoints.points.Length - 1)
             {
                 EndPath();
@@ -50,7 +59,7 @@ public class EnemyMovement : MonoBehaviour {
                 if(random == 0)
                 {
                     wavepointIndex = 1;
-                    destroyPoint = 13;
+                    destroyPoint = 9;
                     // wavpointIndex++;
                     // target = WayPoints.points[wavpointIndex];
                     // Debug.Log(target);
@@ -70,6 +79,12 @@ public class EnemyMovement : MonoBehaviour {
                 target = WayPoints.points[wavepointIndex];
                 wavepointIndex++;
             }else{
+                if(wavepointIndex == 6 && odd)
+                {
+                    wavepointIndex = 10;
+                    destroyPoint = 13;
+                    return;
+                }
                 target = WayPoints.points[wavepointIndex];
                 wavepointIndex++; 
             }

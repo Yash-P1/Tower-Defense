@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 5
+  die: {fileID: 0}
   speed: 0
   startHealth: 500
   worth: 100

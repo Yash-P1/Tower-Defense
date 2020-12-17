@@ -5,6 +5,7 @@ public class Turret : MonoBehaviour {
 
 	private Transform target;
 	private Enemy targetEnemy;
+	public AudioSource sound;
 
 	[Header("General")]
 
@@ -75,6 +76,7 @@ public class Turret : MonoBehaviour {
 				{
 					lineRenderer.enabled = false;
 					impactEffect.Stop();
+					sound.Stop();
 					//impactLight.enabled = false;
 				}
 			}
@@ -117,6 +119,7 @@ public class Turret : MonoBehaviour {
 		{
 			lineRenderer.enabled = true;
 			impactEffect.Play();
+			sound.Play();
 			//impactLight.enabled = true;
 		}
 
