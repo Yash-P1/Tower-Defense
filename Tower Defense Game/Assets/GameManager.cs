@@ -1,24 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
 	public static bool GameIsOver;
 
 	public GameObject gameOverUI;
+	public GameObject completeLevelUI;
 
-	public string nextLevel = "level02";
-	public int levelToUnlock = 2;
-
-	public SceneFader sceneFader;
-
-	void Start ()
+	void Start()
 	{
 		GameIsOver = false;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		if (GameIsOver)
 			return;
 
@@ -28,17 +26,16 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void EndGame ()
+	void EndGame()
 	{
 		GameIsOver = true;
 		gameOverUI.SetActive(true);
 	}
 
 	public void WinLevel()
-    {
-		Debug.Log("Level Won!");
-		PlayerPrefs.SetInt("levelPlayed", levelToUnlock);
-		sceneFader.FadeTo(nextLevel);
+	{
+		GameIsOver = true;
+		completeLevelUI.SetActive(true);
 	}
 
 }
