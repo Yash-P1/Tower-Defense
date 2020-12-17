@@ -27803,7 +27803,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 747807637}
-  PauseButtonUI: {fileID: 1678699039}
   menuSceneName: MainMenu
   sceneFader: {fileID: 1181374123}
 --- !u!1001 &1681696494
@@ -30333,23 +30332,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 4154393476233131653, guid: 49a9ab249bc16b14183d8e546a135d56, type: 3}
-    count: 2
+    count: 1
     rate: 2
   - enemy: {fileID: 4154393476233131653, guid: 49a9ab249bc16b14183d8e546a135d56, type: 3}
-    count: 4
+    count: 2
     rate: 2
   - enemy: {fileID: 4154393476233131653, guid: f00903a188269a848ad28ec63a309a42, type: 3}
-    count: 6
+    count: 3
     rate: 2
   - enemy: {fileID: 4154393476233131653, guid: 7deeddec834964040ac5ef7070ff79ab, type: 3}
-    count: 3
+    count: 1
     rate: 1
   - enemy: {fileID: 4154393476233131653, guid: f00903a188269a848ad28ec63a309a42, type: 3}
     count: 5
     rate: 3
   spawnPoint: {fileID: 51305914}
-  timeBetweenWaves: 3
+  timeBetweenWaves: 1
   waveCountdownText: {fileID: 131375807}
+  gameManager: {fileID: 1834884288}
 --- !u!4 &1834884285
 Transform:
   m_ObjectHideFlags: 0
@@ -30390,7 +30390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0168e6abd3314c5b8439da3923f56f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 500
+  startMoney: 9999
   startLives: 3
 --- !u!114 &1834884288
 MonoBehaviour:
@@ -30405,6 +30405,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1733651119}
+  nextLevel: Level02
+  levelToUnlock: 2
+  sceneFader: {fileID: 1181374123}
 --- !u!114 &1834884289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30418,7 +30421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 747807637}
-  PauseButtonUI: {fileID: 0}
   menuSceneName: MainMenu
   sceneFader: {fileID: 1181374123}
 --- !u!1001 &1835107155

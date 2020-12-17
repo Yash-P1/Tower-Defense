@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class WaveSpawner : MonoBehaviour {
+public class WaveSpawner : MonoBehaviour
+{
 
 	public static int EnemiesAlive = 0;
 
@@ -15,14 +16,22 @@ public class WaveSpawner : MonoBehaviour {
 
 	public Text waveCountdownText;
 
+	public GameManager gameManager;
+
 	private int waveIndex = 0;
 
-	void Update ()
+	void Update()
 	{
-		if(EnemiesAlive > 0)
-        { 
+		if (EnemiesAlive > 0)
+		{
 			return;
-        }
+		}
+
+		if (waveIndex == waves.Length)
+		{
+			gameManager.WinLevel();
+			this.enabled = false;
+		}
 
 		if (countdown <= 0f)
 		{
@@ -38,30 +47,26 @@ public class WaveSpawner : MonoBehaviour {
 		waveCountdownText.text = string.Format("{0:00.00}", countdown);
 	}
 
-	IEnumerator SpawnWave ()
+	IEnumerator SpawnWave()
 	{
 		PlayerStats.Rounds++;
 
 		Wave wave = waves[waveIndex];
+
+		EnemiesAlive = wave.count;
 
 		for (int i = 0; i < wave.count; i++)
 		{
 			SpawnEnemy(wave.enemy);
 			yield return new WaitForSeconds(1f / wave.rate);
 		}
-		waveIndex++;
 
-		if(waveIndex == waves.Length)
-        {
-			Debug.Log("Won!");
-			this.enabled = false;
-        }
+		waveIndex++;
 	}
 
-	void SpawnEnemy (GameObject enemy)
+	void SpawnEnemy(GameObject enemy)
 	{
 		Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-		EnemiesAlive++;
 	}
 
 }
