@@ -378,9 +378,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 167407662}
-  - {fileID: 1733651120}
-  - {fileID: 747807638}
   - {fileID: 1678699040}
+  - {fileID: 747807638}
+  - {fileID: 1733651120}
   - {fileID: 1959738934}
   - {fileID: 52331823}
   m_Father: {fileID: 0}
@@ -4343,7 +4343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.13336597, b: 0.13336597, a: 0.87058824}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10448,7 +10448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.13336597, b: 0.13336597, a: 0.87058824}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -29611,7 +29611,7 @@ RectTransform:
   - {fileID: 88332955}
   - {fileID: 1273970995}
   m_Father: {fileID: 7296409}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30613,7 +30613,7 @@ RectTransform:
   - {fileID: 1247727008}
   - {fileID: 2065951053}
   m_Father: {fileID: 7296409}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -30633,8 +30633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSceneName: MainMenu
-  sceneFader: {fileID: 4769834448483083808, guid: 05b1460bbfa9dd34185a71a3855b9f97,
-    type: 3}
+  sceneFader: {fileID: 1181374123}
 --- !u!82 &1733651122
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32352,22 +32351,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 4154393476233131653, guid: 49a9ab249bc16b14183d8e546a135d56, type: 3}
-    count: 1
-    rate: 2
-  - enemy: {fileID: 4154393476233131653, guid: 49a9ab249bc16b14183d8e546a135d56, type: 3}
-    count: 2
-    rate: 2
+    count: 5
+    rate: 1
   - enemy: {fileID: 4154393476233131653, guid: f00903a188269a848ad28ec63a309a42, type: 3}
     count: 3
-    rate: 2
-  - enemy: {fileID: 4154393476233131653, guid: 7deeddec834964040ac5ef7070ff79ab, type: 3}
-    count: 1
     rate: 1
   - enemy: {fileID: 4154393476233131653, guid: f00903a188269a848ad28ec63a309a42, type: 3}
     count: 5
-    rate: 3
+    rate: 1
+  - enemy: {fileID: 4154393476233131653, guid: 7deeddec834964040ac5ef7070ff79ab, type: 3}
+    count: 2
+    rate: 1
+  - enemy: {fileID: 4154393476233131653, guid: 7deeddec834964040ac5ef7070ff79ab, type: 3}
+    count: 3
+    rate: 0.5
   spawnPoint: {fileID: 51305914}
-  timeBetweenWaves: 1
+  timeBetweenWaves: 5
   waveCountdownText: {fileID: 131375807}
   gameManager: {fileID: 1834884288}
   Level: 3
@@ -32411,8 +32410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0168e6abd3314c5b8439da3923f56f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 9999
-  startLives: 1
+  startMoney: 1300
+  startLives: 2
 --- !u!114 &1834884288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34765,7 +34764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.13336597, b: 0.13336597, a: 0.87058824}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

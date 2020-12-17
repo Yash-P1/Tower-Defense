@@ -9,7 +9,7 @@ public class BuildManager : MonoBehaviour
 	{
 		if (instance != null)
 		{
-			Debug.LogError("More than one BuildManager in scene!");
+			//Debug.LogError("More than one BuildManager in scene!");
 			return;
 		}
 		instance = this;

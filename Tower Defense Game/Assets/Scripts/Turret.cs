@@ -35,6 +35,9 @@ public class Turret : MonoBehaviour {
 
 	public Transform firePoint;
 
+	Vector3 enemyOffSet = new Vector3(0,2.5f,0);
+	
+
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -112,6 +115,7 @@ public class Turret : MonoBehaviour {
 
 	void Laser ()
 	{
+
 		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
 		targetEnemy.Slow(slowAmount);
 
@@ -124,7 +128,7 @@ public class Turret : MonoBehaviour {
 		}
 
 		lineRenderer.SetPosition(0, firePoint.position);
-		lineRenderer.SetPosition(1, target.position);
+		lineRenderer.SetPosition(1, target.position + enemyOffSet);
 
 		Vector3 dir = firePoint.position - target.position;
 

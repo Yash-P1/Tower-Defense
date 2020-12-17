@@ -300,8 +300,8 @@ MonoBehaviour:
     of money and kill an enemy to get rewarded.
 
 
-    - There are 3 types of Mutants:
-    Simple, Fast, Heavy
+    - You can select and place
+    Turrets only on White Tiles.
 
 '
 --- !u!222 &73086949
