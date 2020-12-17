@@ -8291,6 +8291,9 @@ Transform:
   - {fileID: 233920099}
   - {fileID: 110199841}
   - {fileID: 526205335}
+  - {fileID: 689688675}
+  - {fileID: 1009080622}
+  - {fileID: 1084503215}
   - {fileID: 1761776050}
   - {fileID: 1988125707}
   - {fileID: 389433117}
@@ -8300,8 +8303,7 @@ Transform:
   - {fileID: 1752208906}
   - {fileID: 533377283}
   - {fileID: 1952720258}
-  - {fileID: 689688675}
-  - {fileID: 1009080622}
+  - {fileID: 1264323346}
   - {fileID: 1404932024}
   - {fileID: 1492750897}
   - {fileID: 488968560}
@@ -8330,9 +8332,7 @@ Transform:
   - {fileID: 737601447}
   - {fileID: 281852161}
   - {fileID: 2087406378}
-  - {fileID: 1084503215}
   - {fileID: 1834388609}
-  - {fileID: 1264323346}
   - {fileID: 1034280752}
   - {fileID: 808162014}
   - {fileID: 1142996352}
@@ -11274,7 +11274,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 460030378}
-  m_RootOrder: 217
+  m_RootOrder: 208
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &689688676
 Light:
@@ -16992,7 +16992,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 460030378}
-  m_RootOrder: 218
+  m_RootOrder: 209
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1009080623
 Light:
@@ -17903,7 +17903,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 460030378}
-  m_RootOrder: 247
+  m_RootOrder: 210
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1084503216
 Light:
@@ -21097,7 +21097,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 460030378}
-  m_RootOrder: 249
+  m_RootOrder: 220
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1264323347
 Light:
@@ -29953,7 +29953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSceneName: MainMenu
-  sceneFader: {fileID: 0}
+  sceneFader: {fileID: 4769834448483083808, guid: 05b1460bbfa9dd34185a71a3855b9f97,
+    type: 3}
 --- !u!82 &1733651122
 AudioSource:
   m_ObjectHideFlags: 0
