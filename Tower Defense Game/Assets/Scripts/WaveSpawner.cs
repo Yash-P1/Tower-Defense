@@ -18,10 +18,14 @@ public class WaveSpawner : MonoBehaviour
 
 	public GameManager gameManager;
 
+	public static int LevelNumber;
+	public int Level = 1;
+
 	private int waveIndex = 0;
 	
 	private void Start() {
-		EnemiesAlive = 0;	
+		EnemiesAlive = 0;
+		LevelNumber = Level;
 	}
 
 	void Update()

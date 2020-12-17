@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
 		PlayerStats.Money += worth;
 
-		GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+		GameObject effect = (GameObject)Instantiate(deathEffect, transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
 		Destroy(effect, 5f);
 
 		WaveSpawner.EnemiesAlive--;

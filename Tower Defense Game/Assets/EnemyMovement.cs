@@ -12,7 +12,9 @@ public class EnemyMovement : MonoBehaviour {
     public int random;
 	private Enemy enemy;
 
-	void Start()
+    private bool odd = true;
+
+    void Start()
 	{
 		enemy = GetComponent<Enemy>();
 
@@ -33,7 +35,6 @@ public class EnemyMovement : MonoBehaviour {
 		enemy.speed = enemy.startSpeed;
 	}
 
-    private bool odd = true;
 	void GetNextWaypoint()
 	{
 		// if (wavepointIndex >= Waypoints.points.Length - 1)
@@ -42,7 +43,7 @@ public class EnemyMovement : MonoBehaviour {
 		// 	return;
 		// }
         
-        random = Random.Range(0,3);
+        random = Random.Range(0, WaveSpawner.LevelNumber);
 
         if(random%2 == 0)
         {
