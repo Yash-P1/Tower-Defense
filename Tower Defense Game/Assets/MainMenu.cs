@@ -1,23 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public string levelToLoad = "MainLevel";
 
-    // Start is called before the first frame update
+    public SceneFader sceneFader;
+
     public void Play()
     {
-        SceneManager.LoadScene(levelToLoad);
+        sceneFader.FadeTo(levelToLoad);
     }
 
-    // Update is called once per frame
+    public void Option()
+    {
+        sceneFader.FadeTo("Hints");
+    }
+
     public void Quit()
     {
-        Debug.Log("Quit");
+        //Debug.Log("Quit");
         Application.Quit();
     }
 }

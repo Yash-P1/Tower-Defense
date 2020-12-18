@@ -5,6 +5,7 @@ public class Turret : MonoBehaviour {
 
 	private Transform target;
 	private Enemy targetEnemy;
+	public AudioSource sound;
 
 	[Header("General")]
 
@@ -33,6 +34,9 @@ public class Turret : MonoBehaviour {
 	public float turnSpeed = 10f;
 
 	public Transform firePoint;
+
+	Vector3 enemyOffSet = new Vector3(0,2.5f,0);
+	
 
 	// Use this for initialization
 	void Start () {
@@ -75,7 +79,8 @@ public class Turret : MonoBehaviour {
 				{
 					lineRenderer.enabled = false;
 					impactEffect.Stop();
-					impactLight.enabled = false;
+					sound.Stop();
+					//impactLight.enabled = false;
 				}
 			}
 
@@ -110,6 +115,7 @@ public class Turret : MonoBehaviour {
 
 	void Laser ()
 	{
+
 		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
 		targetEnemy.Slow(slowAmount);
 
@@ -117,11 +123,12 @@ public class Turret : MonoBehaviour {
 		{
 			lineRenderer.enabled = true;
 			impactEffect.Play();
-			impactLight.enabled = true;
+			sound.Play();
+			//impactLight.enabled = true;
 		}
 
 		lineRenderer.SetPosition(0, firePoint.position);
-		lineRenderer.SetPosition(1, target.position);
+		lineRenderer.SetPosition(1, target.position + enemyOffSet);
 
 		Vector3 dir = firePoint.position - target.position;
 

@@ -12,7 +12,9 @@ public class EnemyMovement : MonoBehaviour {
     public int random;
 	private Enemy enemy;
 
-	void Start()
+    private bool odd = true;
+
+    void Start()
 	{
 		enemy = GetComponent<Enemy>();
 
@@ -40,6 +42,14 @@ public class EnemyMovement : MonoBehaviour {
 		// 	EndPath();
 		// 	return;
 		// }
+        
+        random = Random.Range(0, WaveSpawner.LevelNumber);
+
+        if(random%2 == 0)
+        {
+            odd = !odd;
+            }
+
         if(wavepointIndex > destroyPoint)//WayPoints.points.Length - 1)
             {
                 EndPath();
@@ -50,7 +60,7 @@ public class EnemyMovement : MonoBehaviour {
                 if(random == 0)
                 {
                     wavepointIndex = 1;
-                    destroyPoint = 13;
+                    destroyPoint = 9;
                     // wavpointIndex++;
                     // target = WayPoints.points[wavpointIndex];
                     // Debug.Log(target);
@@ -70,6 +80,12 @@ public class EnemyMovement : MonoBehaviour {
                 target = WayPoints.points[wavepointIndex];
                 wavepointIndex++;
             }else{
+                if(wavepointIndex == 6 && odd)
+                {
+                    wavepointIndex = 10;
+                    destroyPoint = 13;
+                    return;
+                }
                 target = WayPoints.points[wavepointIndex];
                 wavepointIndex++; 
             }
@@ -81,6 +97,7 @@ public class EnemyMovement : MonoBehaviour {
 	void EndPath()
 	{
 		PlayerStats.Lives--;
+        WaveSpawner.EnemiesAlive--;
 		Destroy(gameObject);
 	}
 
