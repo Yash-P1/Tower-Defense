@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
 	public GameObject gameOverUI;
 	public GameObject completeLevelUI;
+	public GameObject CreditsUI;
 
 	void Start()
 	{
@@ -37,5 +38,11 @@ public class GameManager : MonoBehaviour
 		GameIsOver = true;
 		completeLevelUI.SetActive(true);
 	}
+
+	public void Credits()
+    {
+		GameIsOver = true;
+		CreditsUI.SetActive(true);
+    }
 
 }
